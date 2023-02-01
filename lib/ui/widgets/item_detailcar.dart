@@ -12,7 +12,8 @@ class ItemDetailCarWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: Dimensions.mediumPadding),
+      margin: EdgeInsets.symmetric(
+          horizontal: Dimensions.mediumPadding, vertical: 10),
       height: 260,
       width: context.width,
       decoration: BoxDecoration(

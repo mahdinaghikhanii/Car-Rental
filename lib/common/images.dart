@@ -2,8 +2,10 @@ class Images {
   // image
   static String logo = '';
   static String porsche911 = 'assets/img/porshe1.png';
-  static String porschecain = "assets/img/porshe4";
-  static String porsche_911old = 'assets/img/porshe3';
+  static String porschecain = "assets/img/porshe4.png";
+  static String porsche_911old = 'assets/img/porshe3.png';
+  static String porschePanamera = "assets/img/porshe2.png";
+  static String porscheTaycan = "assets/img/porshe7.png";
 
   /// icon
   static String iconDoor = 'assets/icon/car_door.png';
