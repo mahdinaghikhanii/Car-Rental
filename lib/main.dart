@@ -1,4 +1,6 @@
+import 'package:car/theme/light_theme.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'ui/home/home.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +14,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var defultTexStyle = GoogleFonts.inder();
     return MaterialApp(
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,
@@ -25,7 +28,25 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Car Rental',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          dividerColor: LightThemeColors.borderRadiusColor,
+          colorScheme: const ColorScheme.light(
+              onPrimaryContainer: Color(0xFFEAECF0),
+              onPrimary: LightThemeColors.secoundryPrimaryColor,
+              primary: LightThemeColors.primariColor,
+              primaryContainer: LightThemeColors.containerPirmary),
+          textTheme: TextTheme(
+              labelMedium: defultTexStyle.copyWith(
+                color: LightThemeColors.secoundyPrimaryTextColor,
+                fontSize: 13,
+              ),
+              titleSmall: defultTexStyle.copyWith(
+                  fontSize: 13,
+                  color: LightThemeColors.primaryTextColor,
+                  fontWeight: FontWeight.w500),
+              titleMedium: defultTexStyle.copyWith(
+                  fontSize: 15,
+                  color: LightThemeColors.primaryTextColor,
+                  fontWeight: FontWeight.w400)),
         ),
         home: const HomeScreen());
   }
