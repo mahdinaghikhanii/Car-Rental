@@ -28,6 +28,12 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Car Rental',
         theme: ThemeData(
+          scaffoldBackgroundColor: const Color(0xFFFFFFFF),
+          appBarTheme: const AppBarTheme(
+              elevation: 0,
+              iconTheme: IconThemeData(
+                color: LightThemeColors.primariIconColor,
+              )),
           dividerColor: LightThemeColors.borderRadiusColor,
           colorScheme: const ColorScheme.light(
               onPrimaryContainer: Color(0xFFEAECF0),
