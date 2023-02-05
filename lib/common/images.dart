@@ -14,4 +14,5 @@ class Images {
   static String iconUserAccount = 'assets/icon/user_account.png';
   static String iconDone = 'assets/icon/done.svg';
   static String iconFilter = 'assets/icon/filter.png';
+  static String iconSearch = 'assets/icon/search.png';
 }
