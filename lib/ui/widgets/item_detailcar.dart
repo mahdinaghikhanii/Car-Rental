@@ -1,13 +1,35 @@
+// ignore_for_file: must_be_immutable
 import 'package:car/common/dimensions.dart';
 import 'package:car/common/extension.dart';
 import 'package:car/common/images.dart';
+
 import 'package:car/theme/light_theme.dart';
 import 'package:car/ui/widgets/infromation_about_car.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ItemDetailCarWidgets extends StatelessWidget {
-  const ItemDetailCarWidgets({super.key});
+  final String imgAddres;
+  final String carname;
+  final String girbox;
+  final String userAccount;
+  final String door;
+  final String sun;
+  final String instantConfirmation;
+  final String mony;
+  final String coupmpany;
+
+  const ItemDetailCarWidgets(
+      {super.key,
+      required this.imgAddres,
+      required this.carname,
+      required this.girbox,
+      required this.userAccount,
+      required this.door,
+      required this.sun,
+      required this.instantConfirmation,
+      required this.mony,
+      required this.coupmpany});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +49,7 @@ class ItemDetailCarWidgets extends StatelessWidget {
         children: [
           Center(
             child: Image.asset(
-              "assets/img/porshe4.png",
+              imgAddres,
               width: 270,
               height: 113,
             ),
@@ -37,7 +59,7 @@ class ItemDetailCarWidgets extends StatelessWidget {
                 vertical: Dimensions.smallPadding,
                 horizontal: Dimensions.smallPadding),
             child: Text(
-              "CAIN",
+              carname,
               style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
@@ -45,13 +67,12 @@ class ItemDetailCarWidgets extends StatelessWidget {
             children: [
               SizedBox(width: Dimensions.smallPadding),
               InformationAboutCarWidgets(
-                  title: "A/T", iconAddres: Images.iconGearbox),
+                  title: girbox, iconAddres: Images.iconGearbox),
               InformationAboutCarWidgets(
-                  title: "5", iconAddres: Images.iconUserAccount),
+                  title: userAccount, iconAddres: Images.iconUserAccount),
               InformationAboutCarWidgets(
-                  title: "4", iconAddres: Images.iconDoor),
-              InformationAboutCarWidgets(
-                  title: "A/C", iconAddres: Images.iconSun)
+                  title: door, iconAddres: Images.iconDoor),
+              InformationAboutCarWidgets(title: sun, iconAddres: Images.iconSun)
             ],
           ),
           const SizedBox(
@@ -84,14 +105,13 @@ class ItemDetailCarWidgets extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  "Day/",
+                                  "Day",
                                   style: Theme.of(context).textTheme.titleSmall,
                                 ),
                                 const SizedBox(height: 4),
                                 Text(
-                                  "\$250",
-                                  style:
-                                      Theme.of(context).textTheme.labelMedium,
+                                  mony,
+                                  style: Theme.of(context).textTheme.bodyMedium,
                                 )
                               ],
                             ),
