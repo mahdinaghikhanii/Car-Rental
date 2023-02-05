@@ -13,5 +13,5 @@ class LightThemeColors {
   /// Text Color
   static const primaryTextColor = Color(0xFF16161A);
   static const secoundyPrimaryTextColor = Color(0xFF2CB67D);
-  static const secoundryTxetColor = '';
+  static const subTitlteTextColor = Color(0xFF596474);
 }

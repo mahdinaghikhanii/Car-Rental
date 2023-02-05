@@ -28,6 +28,9 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Car Rental',
         theme: ThemeData(
+          bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+              backgroundColor: Color(0xFF16161A)),
+          cardColor: const Color(0xFF94A1B2),
           scaffoldBackgroundColor: const Color(0xFFFFFFFF),
           appBarTheme: const AppBarTheme(
               elevation: 0,
@@ -45,6 +48,14 @@ class MyApp extends StatelessWidget {
                 color: LightThemeColors.secoundyPrimaryTextColor,
                 fontSize: 13,
               ),
+              headlineSmall: defultTexStyle.copyWith(
+                  color: LightThemeColors.subTitlteTextColor,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 10),
+              titleLarge: defultTexStyle.copyWith(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 28,
+                  color: LightThemeColors.primaryTextColor),
               labelMedium: defultTexStyle.copyWith(
                 color: LightThemeColors.primariColor,
                 fontSize: 13,

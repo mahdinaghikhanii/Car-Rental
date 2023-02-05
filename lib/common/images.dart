@@ -15,4 +15,8 @@ class Images {
   static String iconDone = 'assets/icon/done.svg';
   static String iconFilter = 'assets/icon/filter.png';
   static String iconSearch = 'assets/icon/search.png';
+  static String iconMaxPower = 'assets/icon/power.png';
+  static String iconPertol = 'assets/icon/petrol.png';
+  static String iconNacceleration = 'assets/icon/acceleration.png';
+  static String iconSpeed = 'assets/icon/speed.png';
 }
