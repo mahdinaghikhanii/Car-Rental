@@ -73,7 +73,8 @@ class HomeScreen extends StatelessWidget {
                                 const Spacer(),
                                 Image.asset(
                                   Images.iconSearch,
-                                  width: 27,
+                                  width: 16,
+                                  height: 16,
                                 )
                               ],
                             ),
