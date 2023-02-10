@@ -1,6 +1,6 @@
-import 'package:car/data/common/app_constans.dart';
-import 'package:car/data/common/http_respone_validator.dart';
-import 'package:car/data/entity/car_entity.dart';
+import '../common/app_constans.dart';
+import '../common/http_respone_validator.dart';
+import '../entity/car_entity.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 

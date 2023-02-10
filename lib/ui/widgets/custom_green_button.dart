@@ -1,5 +1,5 @@
-import 'package:car/common/dimensions.dart';
-import 'package:car/common/extension.dart';
+import '../../common/dimensions.dart';
+import '../../common/extension.dart';
 import 'package:flutter/material.dart';
 
 class CustomGreenButtonWidgets extends StatelessWidget {

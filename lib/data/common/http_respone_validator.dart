@@ -1,5 +1,6 @@
-import 'package:car/common/exceptions.dart';
 import 'package:dio/dio.dart';
+
+import '../../common/exceptions.dart';
 
 mixin HttpResponseValidator {
   validateResponse(Response response) {

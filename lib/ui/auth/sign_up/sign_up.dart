@@ -1,8 +1,8 @@
-import 'package:car/generated/l10n.dart';
-import 'package:car/ui/auth/sign_in/sign_in.dart';
-import 'package:car/ui/auth/verify/verify.dart';
-import 'package:car/ui/widgets/custom_green_button.dart';
-import 'package:car/ui/widgets/text_input.dart';
+import '../../../generated/l10n.dart';
+import '../sign_in/sign_in.dart';
+import '../verify/verify.dart';
+import '../../widgets/custom_green_button.dart';
+import '../../widgets/text_input.dart';
 import 'package:flutter/material.dart';
 
 import '../../../common/dimensions.dart';

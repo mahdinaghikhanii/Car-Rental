@@ -1,6 +1,6 @@
-import 'package:car/common/http_client.dart';
-import 'package:car/data/entity/car_entity.dart';
-import 'package:car/data/source/allcar_data_source.dart';
+import '../../common/http_client.dart';
+import '../entity/car_entity.dart';
+import '../source/allcar_data_source.dart';
 
 final homeRepository = AllCarRepository(AllCarsDataSource(httpClient));
 

@@ -1,12 +1,12 @@
-import 'package:car/common/extension.dart';
-import 'package:car/common/images.dart';
-import 'package:car/data/repo/allcar_repo.dart';
-import 'package:car/ui/detail/detail.dart';
-import 'package:car/ui/home/bloc/home_bloc.dart';
-import 'package:car/ui/home/bloc/home_event.dart';
-import 'package:car/ui/home/bloc/home_state.dart';
+import '../../common/extension.dart';
+import '../../common/images.dart';
+import '../../data/repo/allcar_repo.dart';
+import '../detail/detail.dart';
+import 'bloc/home_bloc.dart';
+import 'bloc/home_event.dart';
+import 'bloc/home_state.dart';
 
-import 'package:car/ui/widgets/item_detailcar.dart';
+import '../widgets/item_detailcar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

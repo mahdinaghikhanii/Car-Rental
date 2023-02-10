@@ -1,5 +1,5 @@
-import 'package:car/common/dimensions.dart';
-import 'package:car/generated/l10n.dart';
+import '../../../common/dimensions.dart';
+import '../../../generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class SignInScreen extends StatelessWidget {

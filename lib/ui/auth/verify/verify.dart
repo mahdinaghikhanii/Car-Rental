@@ -1,6 +1,6 @@
-import 'package:car/common/dimensions.dart';
-import 'package:car/generated/l10n.dart';
-import 'package:car/ui/widgets/custom_green_button.dart';
+import '../../../common/dimensions.dart';
+import '../../../generated/l10n.dart';
+import '../../widgets/custom_green_button.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 

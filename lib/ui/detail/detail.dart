@@ -1,9 +1,9 @@
-import 'package:car/common/dimensions.dart';
-import 'package:car/common/extension.dart';
-import 'package:car/common/images.dart';
-import 'package:car/data/entity/car_entity.dart';
-import 'package:car/theme/light_theme.dart';
-import 'package:car/ui/widgets/box_car_power.dart';
+import '../../common/dimensions.dart';
+import '../../common/extension.dart';
+import '../../common/images.dart';
+import '../../data/entity/car_entity.dart';
+import '../../theme/light_theme.dart';
+import '../widgets/box_car_power.dart';
 import 'package:flutter/material.dart';
 
 class DetailScreen extends StatelessWidget {

@@ -1,5 +1,5 @@
-import 'package:car/common/exceptions.dart';
-import 'package:car/data/entity/car_entity.dart';
+import '../../../common/exceptions.dart';
+import '../../../data/entity/car_entity.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class HomeState extends Equatable {
