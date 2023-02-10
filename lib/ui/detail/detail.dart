@@ -170,7 +170,7 @@ class DetailScreen extends StatelessWidget {
                       );
                     });
               } else if (index == 2) {
-                return const SizedBox(height: 40);
+                return const SizedBox(height: 30);
               } else {
                 throw "bad state";
               }

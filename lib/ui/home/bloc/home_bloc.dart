@@ -11,7 +11,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<HomeEvent>((event, emit) async {
       if (event is HomeStarted) {
         try {
-          await Future.delayed(Duration(seconds: 2));
+          await Future.delayed(const Duration(seconds: 2));
           emit(HomeLoading());
           final carDataRespone = await repository.getAllCar();
           emit(HomeSucess(carDataRespone));

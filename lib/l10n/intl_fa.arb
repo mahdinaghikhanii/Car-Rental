@@ -1,4 +1,15 @@
 {
     "search" : "جستجو",
-    "Home" : "خانه"
+    "Home" : "خانه",
+    "Sign_up" : "Sign up",
+    "sign_in" : "Sign in",
+    "first_name" : "First Name",
+    "last_name" : "Last Name",
+    "phone_number" : "Phone Number",
+    "password" : "Password",
+    "continue_" : "Continue",
+    "already_have_an_account" : "Aleady have an account?",
+    "login_in" : "Login in",
+    "verify_phone_number" : "Verify phone number",
+    "we_sent_on_ur_phone_a_verifaction_code" : "We sent on ur phone a 4-digit verification code"
 }

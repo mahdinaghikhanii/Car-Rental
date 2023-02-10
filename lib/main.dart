@@ -1,8 +1,9 @@
+import 'package:car/generated/l10n.dart';
 import 'package:car/theme/light_theme.dart';
+import 'package:car/ui/auth/sign_in/sign_in.dart';
+import 'package:car/ui/auth/sign_up/sign_up.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'ui/home/home.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
@@ -17,13 +18,13 @@ class MyApp extends StatelessWidget {
     var defultTexStyle = GoogleFonts.inder();
     return MaterialApp(
         localizationsDelegates: const [
+          S.delegate,
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: const [
           Locale('en'), // English
-          Locale('es'), // Spanish
         ],
         debugShowCheckedModeBanner: false,
         title: 'Car Rental',
@@ -71,6 +72,6 @@ class MyApp extends StatelessWidget {
                   color: LightThemeColors.primaryTextColor,
                   fontWeight: FontWeight.w400)),
         ),
-        home: const HomeScreen());
+        home: const SignUpScreen());
   }
 }
