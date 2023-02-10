@@ -1,5 +1,5 @@
 import 'package:car/common/dimensions.dart';
-import 'package:car/common/images.dart';
+
 import 'package:flutter/material.dart';
 
 class BoxCarPowerWidgets extends StatelessWidget {

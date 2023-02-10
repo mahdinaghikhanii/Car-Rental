@@ -1,3 +1,5 @@
+import 'package:car/common/http_client.dart';
+import 'package:car/data/source/allcar_data_source.dart';
 import 'package:car/theme/light_theme.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -5,7 +7,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'ui/home/home.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  await AllCarsDataSource(httpClient).getAllDataCar();
   runApp(const MyApp());
 }
 
@@ -48,6 +51,8 @@ class MyApp extends StatelessWidget {
                 color: LightThemeColors.secoundyPrimaryTextColor,
                 fontSize: 13,
               ),
+              headlineMedium: const TextStyle(
+                  color: LightThemeColors.lightTetxcolor, fontSize: 18),
               headlineSmall: defultTexStyle.copyWith(
                   color: LightThemeColors.subTitlteTextColor,
                   fontWeight: FontWeight.w600,

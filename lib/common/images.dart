@@ -19,4 +19,10 @@ class Images {
   static String iconPertol = 'assets/icon/petrol.png';
   static String iconNacceleration = 'assets/icon/acceleration.png';
   static String iconSpeed = 'assets/icon/speed.png';
+  static String iconUserAccountGreen = 'assets/icon/user_green.png';
+  static String iconDoorGreen = 'assets/icon/door_green.png';
+  static String iconSnowTiers = 'assets/icon/snow.png';
+  static String iconGPS = 'assets/icon/gps.png';
+  static String iconBluetooth = 'assets/icon/bluetooth.png';
+  static String iconManual = 'assets/icon/manual.png';
 }
