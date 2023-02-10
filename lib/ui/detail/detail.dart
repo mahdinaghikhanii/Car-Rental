@@ -1,12 +1,14 @@
 import 'package:car/common/dimensions.dart';
 import 'package:car/common/extension.dart';
 import 'package:car/common/images.dart';
+import 'package:car/data/entity/car_entity.dart';
 import 'package:car/theme/light_theme.dart';
 import 'package:car/ui/widgets/box_car_power.dart';
 import 'package:flutter/material.dart';
 
 class DetailScreen extends StatelessWidget {
-  const DetailScreen({super.key});
+  final CarEntity carEntity;
+  const DetailScreen({super.key, required this.carEntity});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +49,7 @@ class DetailScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    "\$250/Day",
+                    "\$${carEntity.money}",
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                 ],

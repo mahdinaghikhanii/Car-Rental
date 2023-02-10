@@ -1,5 +1,3 @@
-import 'package:car/common/http_client.dart';
-import 'package:car/data/source/allcar_data_source.dart';
 import 'package:car/theme/light_theme.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,7 +6,6 @@ import 'ui/home/home.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
-  await AllCarsDataSource(httpClient).getAllDataCar();
   runApp(const MyApp());
 }
 

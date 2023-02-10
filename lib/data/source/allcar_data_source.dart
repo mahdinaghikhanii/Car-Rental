@@ -5,7 +5,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
 abstract class IAllCarsDataSource {
-  Future<List<CarEntity>> getAllDataCar();
+  Future<List<CarEntity>> getAllCar();
 }
 
 class AllCarsDataSource
@@ -14,7 +14,7 @@ class AllCarsDataSource
   final Dio httpClient;
   AllCarsDataSource(this.httpClient);
   @override
-  Future<List<CarEntity>> getAllDataCar() async {
+  Future<List<CarEntity>> getAllCar() async {
     Response response = await httpClient.get(AppConstans().allCars);
     validateResponse(response);
     List<CarEntity> carData = [];

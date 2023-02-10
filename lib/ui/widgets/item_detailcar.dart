@@ -2,6 +2,7 @@
 import 'package:car/common/dimensions.dart';
 import 'package:car/common/extension.dart';
 import 'package:car/common/images.dart';
+import 'package:car/data/entity/car_entity.dart';
 
 import 'package:car/theme/light_theme.dart';
 import 'package:car/ui/widgets/infromation_about_car.dart';
@@ -9,29 +10,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ItemDetailCarWidgets extends StatelessWidget {
-  final Function() ontap;
-  final String imgAddres;
-  final String carname;
-  final String girbox;
-  final String userAccount;
-  final String door;
-  final String sun;
-  final String instantConfirmation;
-  final String mony;
-  final String coupmpany;
-
+  final CarEntity carEntity;
+  final Function()? ontap;
   const ItemDetailCarWidgets(
-      {super.key,
-      required this.imgAddres,
-      required this.carname,
-      required this.girbox,
-      required this.userAccount,
-      required this.door,
-      required this.sun,
-      required this.instantConfirmation,
-      required this.mony,
-      required this.coupmpany,
-      required this.ontap});
+      {super.key, required this.carEntity, required this.ontap});
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +35,7 @@ class ItemDetailCarWidgets extends StatelessWidget {
           children: [
             Center(
               child: Image.asset(
-                imgAddres,
+                carEntity.image,
                 width: 270,
                 height: 113,
               ),
@@ -63,7 +45,7 @@ class ItemDetailCarWidgets extends StatelessWidget {
                   vertical: Dimensions.smallPadding,
                   horizontal: Dimensions.smallPadding),
               child: Text(
-                carname,
+                carEntity.name,
                 style: Theme.of(context).textTheme.titleMedium,
               ),
             ),
@@ -71,13 +53,14 @@ class ItemDetailCarWidgets extends StatelessWidget {
               children: [
                 SizedBox(width: Dimensions.smallPadding),
                 InformationAboutCarWidgets(
-                    title: girbox, iconAddres: Images.iconGearbox),
+                    title: carEntity.girbox, iconAddres: Images.iconGearbox),
                 InformationAboutCarWidgets(
-                    title: userAccount, iconAddres: Images.iconUserAccount),
+                    title: carEntity.userAccount,
+                    iconAddres: Images.iconUserAccount),
                 InformationAboutCarWidgets(
-                    title: door, iconAddres: Images.iconDoor),
+                    title: carEntity.door, iconAddres: Images.iconDoor),
                 InformationAboutCarWidgets(
-                    title: sun, iconAddres: Images.iconSun)
+                    title: carEntity.sun, iconAddres: Images.iconSun)
               ],
             ),
             const SizedBox(
@@ -116,7 +99,7 @@ class ItemDetailCarWidgets extends StatelessWidget {
                                   ),
                                   const SizedBox(height: 4),
                                   Text(
-                                    mony,
+                                    carEntity.money,
                                     style:
                                         Theme.of(context).textTheme.bodyMedium,
                                   )
