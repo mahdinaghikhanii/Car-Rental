@@ -81,7 +81,7 @@ class DetailScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "911",
+                          carEntity.name,
                           style: Theme.of(context).textTheme.titleLarge,
                         ),
                         IconButton(
@@ -92,7 +92,7 @@ class DetailScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      "Toyota",
+                      carEntity.coupmany,
                       style: Theme.of(context)
                           .textTheme
                           .headlineSmall!
@@ -101,7 +101,7 @@ class DetailScreen extends StatelessWidget {
                               color: LightThemeColors.subTitlteTextColor),
                     ),
                     const SizedBox(height: 20),
-                    Image.asset(Images.porsche911),
+                    Image.asset(carEntity.image),
                     const SizedBox(height: 40),
                     Text(
                       "Specifications",
