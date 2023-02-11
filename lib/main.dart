@@ -1,6 +1,5 @@
 import 'generated/l10n.dart';
 import 'theme/light_theme.dart';
-import 'ui/auth/sign_in/sign_in.dart';
 import 'ui/auth/sign_up/sign_up.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';

@@ -12,5 +12,9 @@
     "login_in" : "Login in",
     "verify_phone_number" : "Verify phone number",
     "we_sent_on_ur_phone_a_verifaction_code" : "We sent on ur phone a 4-digit verification code",
-    "verify" : "Verify"
+    "verify" : "Verify",
+    "cant_sign_in" : "Can't sign in?",
+    "account_recovery" : "Account recovery",
+    "dont_have_an_account" : "Don't have an account?",
+    "sign_up_now" : "Sign up now"
 }

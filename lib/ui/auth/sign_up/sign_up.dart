@@ -19,6 +19,7 @@ class SignUpScreen extends StatelessWidget {
     const double customSizeTitle = 14;
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         centerTitle: true,
         title: Text(S.of(context).sign_up,
             style:
@@ -69,8 +70,7 @@ class SignUpScreen extends StatelessWidget {
                     .copyWith(fontSize: customSizeTitle),
               ),
               const SizedBox(height: 10),
-              TextInputWidgets(
-                  controller: phoneNumberController, password: true),
+              TextInputWidgets(controller: passwordController, password: true),
               const SizedBox(height: 50),
               CustomGreenButtonWidgets(
                   ontap: () {
@@ -91,7 +91,7 @@ class SignUpScreen extends StatelessWidget {
                   const SizedBox(width: 4),
                   InkWell(
                     onTap: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                               builder: (context) => const SignInScreen()));

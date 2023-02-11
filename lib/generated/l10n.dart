@@ -189,6 +189,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Can't sign in?`
+  String get cant_sign_in {
+    return Intl.message(
+      'Can\'t sign in?',
+      name: 'cant_sign_in',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account recovery`
+  String get account_recovery {
+    return Intl.message(
+      'Account recovery',
+      name: 'account_recovery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account?`
+  String get dont_have_an_account {
+    return Intl.message(
+      'Don\'t have an account?',
+      name: 'dont_have_an_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign up now`
+  String get sign_up_now {
+    return Intl.message(
+      'Sign up now',
+      name: 'sign_up_now',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

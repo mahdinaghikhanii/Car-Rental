@@ -11,5 +11,8 @@
     "already_have_an_account" : "Aleady have an account?",
     "login_in" : "Login in",
     "verify_phone_number" : "Verify phone number",
-    "we_sent_on_ur_phone_a_verifaction_code" : "We sent on ur phone a 4-digit verification code"
+    "we_sent_on_ur_phone_a_verifaction_code" : "We sent on ur phone a 4-digit verification code",
+    "verify" : "Verify",
+    "cant_sign_in" : "Can't sign in?",
+    "account_recovery" : "Account recovery"
 }

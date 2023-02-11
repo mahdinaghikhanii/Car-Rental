@@ -1,3 +1,7 @@
+import 'package:car/ui/auth/sign_up/sign_up.dart';
+import 'package:car/ui/widgets/custom_green_button.dart';
+import 'package:car/ui/widgets/text_input.dart';
+
 import '../../../common/dimensions.dart';
 import '../../../generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -7,9 +11,12 @@ class SignInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController phoneNumberController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
     const double customSizeTitle = 14;
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         centerTitle: true,
         title: Text(S.of(context).sign_in,
             style: Theme.of(context).textTheme.titleLarge),
@@ -20,15 +27,53 @@ class SignInScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 46),
+              const SizedBox(height: 70),
               Text(
-                S.of(context).first_name,
+                S.of(context).phone_number,
                 style: Theme.of(context)
                     .textTheme
                     .titleMedium!
                     .copyWith(fontSize: customSizeTitle),
               ),
-              TextFormField()
+              const SizedBox(height: 10),
+              TextInputWidgets(controller: phoneNumberController),
+              const SizedBox(height: 24),
+              Text(
+                S.of(context).password,
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium!
+                    .copyWith(fontSize: customSizeTitle),
+              ),
+              const SizedBox(height: 10),
+              TextInputWidgets(
+                controller: passwordController,
+                password: true,
+              ),
+              const SizedBox(height: 60),
+              CustomGreenButtonWidgets(
+                ontap: () {},
+                text: S.of(context).sign_in,
+              ),
+              const SizedBox(height: 25),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    S.of(context).dont_have_an_account,
+                    style: Theme.of(context).textTheme.titleSmall,
+                  ),
+                  const SizedBox(width: 4),
+                  InkWell(
+                      onTap: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SignUpScreen()));
+                      },
+                      child: Text(S.of(context).sign_up_now))
+                ],
+              )
             ],
           ),
         ),
