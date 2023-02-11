@@ -96,7 +96,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 countryCode!.dialCode,
                                 style: Theme.of(context).textTheme.titleMedium,
                               ))
-                            : null),
+                            : Center(
+                                child: Text(
+                                  "Country\nCode",
+                                  textAlign: TextAlign.center,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleSmall!
+                                      .copyWith(fontSize: 12),
+                                ),
+                              )),
                   ),
                   const SizedBox(width: 10),
                   Expanded(

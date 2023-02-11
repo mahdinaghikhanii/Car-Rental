@@ -1,12 +1,18 @@
+import 'package:car/ui/auth/sign_in/sign_in.dart';
+import 'package:firebase_core/firebase_core.dart';
+
+import 'firebase_options.dart';
 import 'generated/l10n.dart';
 import 'theme/light_theme.dart';
-import 'ui/auth/sign_up/sign_up.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_country_code_picker/fl_country_code_picker.dart' as flc;
 
 void main() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -73,6 +79,6 @@ class MyApp extends StatelessWidget {
                   color: LightThemeColors.primaryTextColor,
                   fontWeight: FontWeight.w400)),
         ),
-        home: const SignUpScreen());
+        home: const SignInScreen());
   }
 }

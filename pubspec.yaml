@@ -47,6 +47,7 @@ dependencies:
   cached_network_image: ^3.2.1
   pinput: ^2.2.23
   fl_country_code_picker: ^0.1.2
+  firebase_core: ^2.5.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
