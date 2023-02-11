@@ -4,6 +4,7 @@ import 'ui/auth/sign_up/sign_up.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
+import 'package:fl_country_code_picker/fl_country_code_picker.dart' as flc;
 
 void main() async {
   runApp(const MyApp());
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         localizationsDelegates: const [
           S.delegate,
+          flc.CountryLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,

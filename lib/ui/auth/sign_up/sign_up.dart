@@ -1,3 +1,5 @@
+import 'package:fl_country_code_picker/fl_country_code_picker.dart';
+
 import '../../../generated/l10n.dart';
 import '../sign_in/sign_in.dart';
 import '../verify/verify.dart';
@@ -7,8 +9,16 @@ import 'package:flutter/material.dart';
 
 import '../../../common/dimensions.dart';
 
-class SignUpScreen extends StatelessWidget {
+class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
+
+  @override
+  State<SignUpScreen> createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
+  final countryPicker = const FlCountryCodePicker();
+  CountryCode? countryCode;
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +70,40 @@ class SignUpScreen extends StatelessWidget {
                     .copyWith(fontSize: customSizeTitle),
               ),
               const SizedBox(height: 10),
-              TextInputWidgets(controller: phoneNumberController),
+              Row(
+                children: [
+                  GestureDetector(
+                    onTap: () async {
+                      final code =
+                          await countryPicker.showPicker(context: context);
+
+                      setState(() {
+                        countryCode = code;
+                      });
+                    },
+                    child: Container(
+                        width: 76,
+                        height: 50,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(
+                                Dimensions.smallBoderRadius),
+                            border: Border.all(
+                              color: Theme.of(context).cardColor,
+                            )),
+                        child: countryCode != null
+                            ? Center(
+                                child: Text(
+                                countryCode!.dialCode,
+                                style: Theme.of(context).textTheme.titleMedium,
+                              ))
+                            : null),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: TextInputWidgets(controller: phoneNumberController),
+                  )
+                ],
+              ),
               const SizedBox(height: 24),
               Text(
                 S.of(context).password,
