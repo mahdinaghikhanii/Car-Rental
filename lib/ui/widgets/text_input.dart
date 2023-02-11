@@ -13,6 +13,7 @@ class TextInputWidgets extends StatelessWidget {
     return SizedBox(
       height: 50,
       child: TextFormField(
+          cursorColor: Theme.of(context).cardColor,
           obscureText: password,
           controller: controller,
           decoration: InputDecoration(
@@ -21,7 +22,6 @@ class TextInputWidgets extends StatelessWidget {
                       onPressed: () {},
                       icon: SvgPicture.asset("assets/icon/ayse.svg"))
                   : null,
-              fillColor: Colors.white,
               focusedBorder: OutlineInputBorder(
                 borderRadius:
                     BorderRadius.circular(Dimensions.smallBoderRadius),

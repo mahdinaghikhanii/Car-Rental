@@ -19,13 +19,14 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   final countryPicker = const FlCountryCodePicker();
   CountryCode? countryCode;
+  TextEditingController firstNameController = TextEditingController();
+  TextEditingController lastNameController = TextEditingController();
+  TextEditingController phoneNumberController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController firstNameController = TextEditingController();
-    TextEditingController lastNameController = TextEditingController();
-    TextEditingController phoneNumberController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
     const double customSizeTitle = 14;
     return Scaffold(
       appBar: AppBar(
@@ -38,123 +39,138 @@ class _SignUpScreenState extends State<SignUpScreen> {
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: Dimensions.mediumPadding),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 46),
-              Text(
-                S.of(context).first_name,
-                style: Theme.of(context)
-                    .textTheme
-                    .titleMedium!
-                    .copyWith(fontSize: customSizeTitle),
-              ),
-              const SizedBox(height: 10),
-              TextInputWidgets(controller: firstNameController),
-              const SizedBox(height: 24),
-              Text(
-                S.of(context).last_name,
-                style: Theme.of(context)
-                    .textTheme
-                    .titleMedium!
-                    .copyWith(fontSize: customSizeTitle),
-              ),
-              const SizedBox(height: 10),
-              TextInputWidgets(controller: lastNameController),
-              const SizedBox(height: 24),
-              Text(
-                S.of(context).phone_number,
-                style: Theme.of(context)
-                    .textTheme
-                    .titleMedium!
-                    .copyWith(fontSize: customSizeTitle),
-              ),
-              const SizedBox(height: 10),
-              Row(
-                children: [
-                  GestureDetector(
-                    onTap: () async {
-                      final code =
-                          await countryPicker.showPicker(context: context);
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: 46),
+                Text(
+                  S.of(context).first_name,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(fontSize: customSizeTitle),
+                ),
+                const SizedBox(height: 10),
+                TextInputWidgets(controller: firstNameController),
+                const SizedBox(height: 24),
+                Text(
+                  S.of(context).last_name,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(fontSize: customSizeTitle),
+                ),
+                const SizedBox(height: 10),
+                TextInputWidgets(controller: lastNameController),
+                const SizedBox(height: 24),
+                Text(
+                  S.of(context).phone_number,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(fontSize: customSizeTitle),
+                ),
+                const SizedBox(height: 10),
+                Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () async {
+                        final code =
+                            await countryPicker.showPicker(context: context);
 
-                      setState(() {
-                        countryCode = code;
-                      });
-                    },
-                    child: Container(
-                        width: 76,
-                        height: 50,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(
-                                Dimensions.smallBoderRadius),
-                            border: Border.all(
-                              color: Theme.of(context).cardColor,
-                            )),
-                        child: countryCode != null
-                            ? Center(
-                                child: Text(
-                                countryCode!.dialCode,
-                                style: Theme.of(context).textTheme.titleMedium,
-                              ))
-                            : Center(
-                                child: Text(
-                                  "Country\nCode",
-                                  textAlign: TextAlign.center,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleSmall!
-                                      .copyWith(fontSize: 12),
-                                ),
+                        setState(() {
+                          countryCode = code;
+                        });
+                      },
+                      child: Container(
+                          width: 76,
+                          height: 50,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(
+                                  Dimensions.smallBoderRadius),
+                              border: Border.all(
+                                color: Theme.of(context).cardColor,
                               )),
-                  ),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: TextInputWidgets(controller: phoneNumberController),
-                  )
-                ],
-              ),
-              const SizedBox(height: 24),
-              Text(
-                S.of(context).password,
-                style: Theme.of(context)
-                    .textTheme
-                    .titleMedium!
-                    .copyWith(fontSize: customSizeTitle),
-              ),
-              const SizedBox(height: 10),
-              TextInputWidgets(controller: passwordController, password: true),
-              const SizedBox(height: 50),
-              CustomGreenButtonWidgets(
-                  ontap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const VerifyScreen()));
-                  },
-                  text: S.of(context).continue_),
-              const SizedBox(height: 24),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    S.of(context).already_have_an_account,
-                    style: Theme.of(context).textTheme.titleSmall,
-                  ),
-                  const SizedBox(width: 4),
-                  InkWell(
-                    onTap: () {
-                      Navigator.pushReplacement(
+                          child: countryCode != null
+                              ? Center(
+                                  child: Text(
+                                  countryCode!.dialCode,
+                                  style:
+                                      Theme.of(context).textTheme.titleMedium,
+                                ))
+                              : Center(
+                                  child: Text(
+                                    "Country\nCode",
+                                    textAlign: TextAlign.center,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleSmall!
+                                        .copyWith(fontSize: 12),
+                                  ),
+                                )),
+                    ),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child:
+                          TextInputWidgets(controller: phoneNumberController),
+                    )
+                  ],
+                ),
+                const SizedBox(height: 24),
+                Text(
+                  S.of(context).password,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(fontSize: customSizeTitle),
+                ),
+                const SizedBox(height: 10),
+                TextInputWidgets(
+                    controller: passwordController, password: true),
+                const SizedBox(height: 50),
+                CustomGreenButtonWidgets(
+                    ontap: () {
+                      Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const SignInScreen()));
+                              builder: (context) => const VerifyScreen()));
                     },
-                    child: Text(
-                      S.of(context).login_in,
+                    text: S.of(context).continue_),
+                const SizedBox(height: 24),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      S.of(context).already_have_an_account,
+                      style: Theme.of(context).textTheme.titleSmall,
                     ),
-                  ),
-                ],
-              )
-            ],
+                    const SizedBox(width: 4),
+                    InkWell(
+                      onTap: () {
+                        if (firstNameController.text.isEmpty &&
+                            lastNameController.text.isEmpty &&
+                            countryCode!.code.isEmpty &&
+                            phoneNumberController.text.isEmpty) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content: Text("Please check TextFIled !")));
+                        } else {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const SignInScreen()));
+                        }
+                      },
+                      child: Text(
+                        S.of(context).login_in,
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),

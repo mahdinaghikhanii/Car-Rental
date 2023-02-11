@@ -48,6 +48,7 @@ dependencies:
   pinput: ^2.2.23
   fl_country_code_picker: ^0.1.2
   firebase_core: ^2.5.0
+  firebase_auth: ^4.2.6
 dev_dependencies:
   flutter_test:
     sdk: flutter

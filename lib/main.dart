@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:fl_country_code_picker/fl_country_code_picker.dart' as flc;
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
