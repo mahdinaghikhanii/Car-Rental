@@ -1,4 +1,4 @@
-import 'package:car/ui/auth/sign_in/sign_in.dart';
+import 'package:car/ui/home/home.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'firebase_options.dart';
@@ -80,6 +80,6 @@ class MyApp extends StatelessWidget {
                   color: LightThemeColors.primaryTextColor,
                   fontWeight: FontWeight.w400)),
         ),
-        home: const SignInScreen());
+        home: const HomeScreen());
   }
 }

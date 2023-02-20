@@ -20,8 +20,6 @@ class _SignInScreenState extends State<SignInScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-    final GlobalKey<FormState> _formKey2 = GlobalKey<FormState>();
     TextEditingController phoneNumberController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
     const double customSizeTitle = 14;
@@ -36,7 +34,6 @@ class _SignInScreenState extends State<SignInScreen> {
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: Dimensions.mediumPadding),
           child: Form(
-            key: _formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
